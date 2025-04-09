@@ -35,7 +35,7 @@ def llm_shorten_query(query):
 # Simplified retrieval function
 def retrieve_assessments(query, k=10):
     processed_query = llm_shorten_query(query)
-    st.write(f"Processed Query: {processed_query}")  # Debug
+    # st.write(f"Processed Query: {processed_query}")  # Debug
     query_embedding = embedding_model.encode([processed_query], show_progress_bar=False)[0]
     query_embedding = np.array([query_embedding], dtype='float32')
     distances, indices = index.search(query_embedding, k)
