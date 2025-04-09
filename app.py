@@ -9,7 +9,7 @@ import re
 # Configure Gemini API
 API_KEY = st.secrets.get("GEMINI_API_KEY", "AIzaSyBxFG2RWw6yBa2_CIqTCrEXVfyMWfwBbZo")
 genai.configure(api_key=API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-1.5-pro')
 
 # Load data and index
 try:
@@ -23,7 +23,7 @@ except Exception as e:
 
 # LLM preprocessing function
 def llm_shorten_query(query):
-    prompt = "Extract up to 10 technical skills (if available) from the query as a space-separated list. Query: "
+    prompt = "List only technical skills from the query, space-separated, max 10 words: "
     try:
         response = model.generate_content(prompt + query)
         return response.text.strip()
