@@ -1,0 +1,7 @@
+streamlit==1.36.0
+pandas==2.2.2
+numpy==1.26.4
+sentence-transformers==3.0.1
+transformers==4.43.3  # Pins to a version with init_empty_weights
+faiss-cpu==1.8.0
+google-generativeai==0.8.1
