@@ -6,7 +6,7 @@ import faiss
 import google.generativeai as genai
 
 # Configure Gemini API
-API_KEY = st.secrets.get("GEMINI_API_KEY", "AIzaSyBxFG2RWw6yBa2_CIqTCrEXVfyMWfwBbZo")
+API_KEY = st.secrets.get("GEMINI_API_KEY", "AIzaSyAn9VCpEGofkBDmz-nQ86EEY3TWonrYn6g")
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-1.5-pro')
 
